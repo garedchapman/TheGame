@@ -6,7 +6,7 @@
  */
 #include <msp430g2553.h>
 #include "game.h"
-#include "LCD/LCD.h"
+#include "LCD_game.h"
 
 unsigned char initPlayer()
 {
@@ -31,11 +31,25 @@ unsigned char movePlayer(unsigned char player, unsigned char direction)
                 //
                 // update player position based on direction of movement
                 //
+                case RIGHT:
+                        if ((player & 0x0f) < 7)
+                                player += 1;
+                        break;
+                case LEFT:
+                        if ((player & 0x0f) > 0)
+                                player -= 1;
+                        break;
+                case UP:
+                        player &= ~ROW_MASK;
+                        break;
+                case DOWN:
+                        player |= ROW_MASK;
+                        break;
+
         }
 
         return player;
 }
-
 char didPlayerWin(unsigned char player)
 {
         return player == 0xC7;
