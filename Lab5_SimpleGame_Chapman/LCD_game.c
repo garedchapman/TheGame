@@ -129,7 +129,7 @@ void writeCommandByte(char commandByte)
     delayMilli();
 }
 
-void LCDinit()
+void LCDINIT()
 {
     writeCommandNibble(0x03);
 
@@ -156,7 +156,7 @@ void LCDinit()
 }
 
 
-void LCDclear()
+void LCDCLR()
 {
     writeCommandByte(1);
 }

@@ -22,7 +22,7 @@ char P1ButtonReleased(char pin)
 
 void waitForP1ButtonRelease(char pin)
 {
-    while (!isP1ButtonReleased(pin)) {}
+    while (!P1ButtonReleased(pin)) {}
     debounce();
 }
 
