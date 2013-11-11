@@ -8,11 +8,12 @@
 #ifndef GAME_H_
 #define GAME_H_
 
+#define RIGHT BIT1
+#define LEFT BIT2
+#define UP BIT3
+#define DOWN BIT4
 
-#define UP 1
-#define DOWN 2
-#define LEFT 3
-#define RIGHT 4
+
 
 #define ROW_MASK 0x40
 
